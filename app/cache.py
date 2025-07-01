@@ -41,7 +41,7 @@ def set_books_cache(data):
         return
     try:
         json_data = json.dumps(data)
-        r.set("books", json_data, ex=300)  # expire in 5 mins
+        r.set("books", json_data, ex=30)  # expire in 5 mins
         print("✅ Cache SET")
     except Exception as e:
         print(f"⚠️ Redis WRITE error: {e}")
